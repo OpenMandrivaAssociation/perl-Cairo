@@ -2,7 +2,7 @@
 
 Summary:	Perl module for the Cairo library
 Name:		perl-%module
-Version:	1.040
+Version:	1.041
 Release:	%mkrel 1
 License:	GPL or Artistic
 Group:		Development/GNOME and GTK+
