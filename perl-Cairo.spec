@@ -11,6 +11,7 @@ Source:		http://prdownloads.sourceforge.net/gtk2-perl/%module-%version.tar.bz2
 URL:		http://gtk2-perl.sf.net/
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	cairo-devel perl-devel perl-ExtUtils-Depends perl-ExtUtils-PkgConfig
+BuildRequires:	perl-Test-Number-Delta
 
 %description
 This module provides perl access to the Cairo library.
