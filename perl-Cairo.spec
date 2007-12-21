@@ -9,6 +9,7 @@ Group:		Development/GNOME and GTK+
 # http://sourceforge.net/project/showfiles.php?group_id=64773&package_id=160888
 Source:		http://prdownloads.sourceforge.net/gtk2-perl/%module-%version.tar.bz2
 URL:		http://gtk2-perl.sf.net/
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	cairo-devel perl-devel perl-ExtUtils-Depends perl-ExtUtils-PkgConfig
 BuildRequires:	perl-Test-Number-Delta
 
