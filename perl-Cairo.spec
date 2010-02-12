@@ -1,17 +1,24 @@
-%define module Cairo
+%define upstream_name    Cairo
+%define upstream_version 1.061
+
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 2
 
 Summary:	Perl module for the Cairo library
-Name:		perl-%module
-Version:	1.061
-Release:	%mkrel 1
-License:	GPL or Artistic
+License:	GPL+ or Artistic
 Group:		Development/GNOME and GTK+
+Url:		http://gtk2-perl.sf.net/
 # http://sourceforge.net/project/showfiles.php?group_id=64773&package_id=160888
-Source:		http://prdownloads.sourceforge.net/gtk2-perl/%module-%version.tar.bz2
-URL:		http://gtk2-perl.sf.net/
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires:	cairo-devel perl-devel perl-ExtUtils-Depends perl-ExtUtils-PkgConfig
-BuildRequires:	perl-Test-Number-Delta
+Source0:    http://prdownloads.sourceforge.net/gtk2-perl/%{upstream_name}-%{upstream_version}.tar.bz2
+
+BuildRequires:	cairo-devel
+BuildRequires:  perl(ExtUtils::Depends)
+BuildRequires:  perl(ExtUtils::PkgConfig)
+BuildRequires:	perl(Test::Number::Delta)
+BuildRequires:  perl-devel
+
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 This module provides perl access to the Cairo library.
@@ -24,13 +31,13 @@ extended Porter/Duff compositing algebra as found in the X Render
 Extension.
 
 %prep
-%setup -q -n %module-%version
+%setup -q -n %{upstream_name}-%{upstream_version}
 find -type d -name CVS | rm -rf
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
-%{__make} OPTIMIZE="$RPM_OPT_FLAGS"
-%{__make} test || :
+%make OPTIMIZE="$RPM_OPT_FLAGS"
+%make test || :
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -43,8 +50,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-, root, root)
 %doc LICENSE examples README NEWS TODO ChangeLog
 %{_mandir}/*/*
-%{perl_vendorarch}/%module
-%{perl_vendorarch}/%module.pm
+%{perl_vendorarch}/%{upstream_name}
+%{perl_vendorarch}/%{upstream_name}.pm
 %{perl_vendorarch}/auto/*
-
-
