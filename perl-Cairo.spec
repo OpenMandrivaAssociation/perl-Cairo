@@ -1,9 +1,9 @@
 %define upstream_name    Cairo
-%define upstream_version 1.061
+%define upstream_version 1.070
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 2
+Release:    %mkrel 1
 
 Summary:	Perl module for the Cairo library
 License:	GPL+ or Artistic
