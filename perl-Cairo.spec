@@ -48,7 +48,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-, root, root)
-%doc LICENSE examples README NEWS TODO ChangeLog
+%doc LICENSE examples README NEWS TODO 
 %{_mandir}/*/*
 %{perl_vendorarch}/%{upstream_name}
 %{perl_vendorarch}/%{upstream_name}.pm
