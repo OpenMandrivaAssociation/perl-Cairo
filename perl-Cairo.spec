@@ -1,22 +1,22 @@
 %define upstream_name    Cairo
 %define upstream_version 1.070
 
-Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
-Release:    8
+Name:		perl-%{upstream_name}
+Version:	%perl_convert_version %{upstream_version}
+Release:	8
 
 Summary:	Perl module for the Cairo library
 License:	GPL+ or Artistic
 Group:		Development/GNOME and GTK+
 Url:		http://gtk2-perl.sf.net/
 # http://sourceforge.net/project/showfiles.php?group_id=64773&package_id=160888
-Source0:    http://prdownloads.sourceforge.net/gtk2-perl/%{upstream_name}-%{upstream_version}.tar.bz2
+Source0:		http://prdownloads.sourceforge.net/gtk2-perl/%{upstream_name}-%{upstream_version}.tar.bz2
 
 BuildRequires:	pkgconfig(cairo)
-BuildRequires:  perl(ExtUtils::Depends)
-BuildRequires:  perl(ExtUtils::PkgConfig)
+BuildRequires: 	perl(ExtUtils::Depends)
+BuildRequires:	perl(ExtUtils::PkgConfig)
 BuildRequires:	perl(Test::Number::Delta)
-BuildRequires:  perl-devel
+BuildRequires:	perl-devel
 
 %description
 This module provides perl access to the Cairo library.
@@ -35,10 +35,11 @@ find -type d -name CVS | rm -rf
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
 %make OPTIMIZE="%{optflags}"
-%make test || :
+
+%check
+make test || :
 
 %install
-rm -rf %{buildroot}
 %makeinstall_std
 
 %files
