@@ -1,19 +1,19 @@
-%define upstream_name    Cairo
-%define upstream_version 1.070
+%define	modname	Cairo
+%define	modver	1.070
 
-Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	8
+Name:		perl-%{modname}
+Version:	%{perl_convert_version %{modver}}
+Release:	9
 
 Summary:	Perl module for the Cairo library
 License:	GPL+ or Artistic
 Group:		Development/GNOME and GTK+
 Url:		http://gtk2-perl.sf.net/
 # http://sourceforge.net/project/showfiles.php?group_id=64773&package_id=160888
-Source0:		http://prdownloads.sourceforge.net/gtk2-perl/%{upstream_name}-%{upstream_version}.tar.bz2
+Source0:	http://prdownloads.sourceforge.net/gtk2-perl/%{modname}-%{modver}.tar.bz2
 
 BuildRequires:	pkgconfig(cairo)
-BuildRequires: 	perl(ExtUtils::Depends)
+BuildRequires:	perl(ExtUtils::Depends)
 BuildRequires:	perl(ExtUtils::PkgConfig)
 BuildRequires:	perl(Test::Number::Delta)
 BuildRequires:	perl-devel
@@ -29,12 +29,11 @@ extended Porter/Duff compositing algebra as found in the X Render
 Extension.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
-find -type d -name CVS | rm -rf
+%setup -qn %{modname}-%{modver}
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
-%make OPTIMIZE="%{optflags}"
+perl Makefile.PL INSTALLDIRS=vendor
+%make
 
 %check
 make test || :
@@ -45,12 +44,15 @@ make test || :
 %files
 %doc LICENSE examples README NEWS TODO 
 %{_mandir}/*/*
-%{perl_vendorarch}/%{upstream_name}
-%{perl_vendorarch}/%{upstream_name}.pm
+%{perl_vendorarch}/%{modname}
+%{perl_vendorarch}/%{modname}.pm
 %{perl_vendorarch}/auto/*
 
-
 %changelog
+* Wed Dec 26 2012 Per Øyvind Karlsen <peroyvind@mandriva.org> 1.70.0-9
+- rebuild for perl-5.16.2
+- cleanups
+
 * Sun Jan 22 2012 Oden Eriksson <oeriksson@mandriva.com> 1.70.0-7mdv2012.0
 + Revision: 765078
 - rebuilt for perl-5.14.2
