@@ -10,7 +10,7 @@ License:	GPL+ or Artistic
 Group:		Development/GNOME and GTK+
 Url:		http://gtk2-perl.sf.net/
 # http://sourceforge.net/project/showfiles.php?group_id=64773&package_id=160888
-Source0:	http://prdownloads.sourceforge.net/gtk2-perl/%{modname}-%{modver}.tar.bz2
+Source0:	http://prdownloads.sourceforge.net/gtk2-perl/%{modname}-%{modver}.tar.gz
 
 BuildRequires:	pkgconfig(cairo)
 BuildRequires:	perl(ExtUtils::Depends)
