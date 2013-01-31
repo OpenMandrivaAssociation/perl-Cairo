@@ -1,9 +1,9 @@
 %define	modname	Cairo
-%define	modver	1.070
+%define	modver	1.102
 
 Name:		perl-%{modname}
 Version:	%{perl_convert_version %{modver}}
-Release:	9
+Release:	1
 
 Summary:	Perl module for the Cairo library
 License:	GPL+ or Artistic
