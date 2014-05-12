@@ -11,6 +11,7 @@ Group:		Development/GNOME and GTK+
 Url:		http://gtk2-perl.sf.net/
 # http://sourceforge.net/project/showfiles.php?group_id=64773&package_id=160888
 Source0:	http://sourceforge.net/projects/gtk2-perl/files/%{modname}/%{modver}/%{modname}-%{modver}.tar.gz
+Source100:	%{name}.rpmlintrc
 BuildRequires:	perl-devel
 BuildRequires:	perl(ExtUtils::Depends)
 BuildRequires:	perl(ExtUtils::PkgConfig)
