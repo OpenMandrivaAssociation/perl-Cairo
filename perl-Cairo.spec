@@ -1,11 +1,11 @@
 %define	modname	Cairo
-%define modver 1.104
+%define modver 1.105
 
 Summary:	Perl module for the Cairo library
 
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
-Release:	6
+Release:	1
 License:	GPLv2+ or Artistic
 Group:		Development/GNOME and GTK+
 Url:		http://gtk2-perl.sf.net/
@@ -47,5 +47,3 @@ make test || :
 %{perl_vendorarch}/%{modname}.pm
 %{perl_vendorarch}/auto/*
 %{_mandir}/man3/*
-
-
