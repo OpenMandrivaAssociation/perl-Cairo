@@ -1,5 +1,2 @@
-removed_sources:
-  Cairo-1.102.tar.gz: 796bae906ba91e2de5ca314832492ac3fe28b3dc
-  Cairo-1.104.tar.gz: 5af4c05dc2f5ea48a6a03edccecc5a09a220bcf3
 sources:
-  Cairo-1.105.tar.gz: 3da2454e557b50d550841df9e445b33d3ee20b27
+  Cairo-1.106.tar.gz: f9efb66be604035176dd104f892bc7060c84b731
