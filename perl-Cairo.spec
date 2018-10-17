@@ -2,10 +2,9 @@
 %define modver 1.106
 
 Summary:	Perl module for the Cairo library
-
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
-Release:	2
+Release:	3
 License:	GPLv2+ or Artistic
 Group:		Development/GNOME and GTK+
 Url:		http://gtk2-perl.sf.net/
@@ -29,17 +28,17 @@ extended Porter/Duff compositing algebra as found in the X Render
 Extension.
 
 %prep
-%setup -qn %{modname}-%{modver}
+%autosetup -n %{modname}-%{modver} -p1
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
-%make
+%make_build
 
 %check
 make test || :
 
 %install
-%makeinstall_std
+%make_install
 
 %files
 %doc LICENSE examples README NEWS TODO
