@@ -4,7 +4,7 @@
 Summary:	Perl module for the Cairo library
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
-Release:	4
+Release:	5
 License:	GPLv2+ or Artistic
 Group:		Development/GNOME and GTK+
 Url:		http://gtk2-perl.sf.net/
